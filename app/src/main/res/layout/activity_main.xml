@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/numberField1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="151dp"
+        android:layout_marginBottom="13dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/operationField"
+        app:layout_constraintEnd_toEndOf="@+id/numberField2"
+        app:layout_constraintStart_toStartOf="@+id/numberField2"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/button_operation_equal"
         android:layout_width="71dp"
@@ -24,6 +36,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginBottom="22dp"
+        android:onClick="onNumberClick"
         android:text="@string/button_number_1"
         app:layout_constraintBottom_toTopOf="@+id/button_number_4"
         app:layout_constraintEnd_toStartOf="@+id/button_number_2"
@@ -36,6 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="22dp"
+        android:onClick="onNumberClick"
         android:text="@string/button_number_2"
         app:layout_constraintBottom_toTopOf="@+id/button_number_5"
         app:layout_constraintEnd_toStartOf="@+id/button_number_3"
@@ -49,6 +63,7 @@
         android:layout_marginEnd="17dp"
         android:layout_marginRight="17dp"
         android:layout_marginBottom="22dp"
+        android:onClick="onNumberClick"
         android:text="@string/button_number_3"
         app:layout_constraintBottom_toTopOf="@+id/button_number_6"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,6 +77,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginBottom="23dp"
+        android:onClick="onNumberClick"
         android:text="@string/button_number_4"
         app:layout_constraintBottom_toTopOf="@+id/button_number_7"
         app:layout_constraintEnd_toStartOf="@+id/button_number_5"
@@ -74,6 +90,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="23dp"
+        android:onClick="onNumberClick"
         android:text="@string/button_number_5"
         app:layout_constraintBottom_toTopOf="@+id/button_number_8"
         app:layout_constraintEnd_toStartOf="@+id/button_number_6"
@@ -87,6 +104,7 @@
         android:layout_marginEnd="17dp"
         android:layout_marginRight="17dp"
         android:layout_marginBottom="23dp"
+        android:onClick="onNumberClick"
         android:text="@string/button_number_6"
         app:layout_constraintBottom_toTopOf="@+id/button_number_9"
         app:layout_constraintEnd_toEndOf="parent"
@@ -100,6 +118,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginBottom="89dp"
+        android:onClick="onNumberClick"
         android:text="@string/button_number_7"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button_number_8"
@@ -112,6 +131,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="25dp"
+        android:onClick="onNumberClick"
         android:text="@string/button_number_8"
         app:layout_constraintBottom_toTopOf="@+id/button_number_0"
         app:layout_constraintEnd_toStartOf="@+id/button_number_9"
@@ -123,6 +143,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
+        android:onClick="onNumberClick"
         android:text="@string/button_number_0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/button_number_8"
@@ -135,6 +156,7 @@
         android:layout_marginEnd="17dp"
         android:layout_marginRight="17dp"
         android:layout_marginBottom="89dp"
+        android:onClick="onNumberClick"
         android:text="@string/button_number_9"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -195,4 +217,47 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button_operation_mul"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/numberField2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="11dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/resultField"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_operation_equal"
+        app:layout_constraintTop_toBottomOf="@+id/operationField" />
+
+    <TextView
+        android:id="@+id/resultField"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginLeft="31dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="422dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/numberField2"
+        app:layout_constraintTop_toBottomOf="@+id/numberField2" />
+
+    <TextView
+        android:id="@+id/operationField"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginRight="17dp"
+        android:layout_marginBottom="14dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/numberField2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numberField1" />
+
 </android.support.constraint.ConstraintLayout>
