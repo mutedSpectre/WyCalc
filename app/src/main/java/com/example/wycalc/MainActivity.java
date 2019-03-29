@@ -42,8 +42,12 @@ public class MainActivity extends AppCompatActivity {
         operationField.setText(last_operation);
     }
 
-    @Override
     public void onNumberClick(View view) {
         Button button = (Button)view;
+        numberField1.append(button.getText());
+
+        if(last_operation.equals("=") && operand!=null){
+            operand = null;
+        }
     }
 }
